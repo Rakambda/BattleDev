@@ -1,0 +1,44 @@
+plugins {
+    id "com.github.ben-manes.versions" version '0.28.0'
+    id 'idea'
+    id 'java'
+}
+
+group = 'fr.raksrinana'
+description = 'BattleDev'
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+
+ext.moduleName = project.moduleName
+dependencies {
+    testImplementation "org.reflections:reflections:${project.reflections_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${project.junit_version}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${project.junit_version}"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    modularity.inferModulePath.set(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+processResources {
+    from 'src/main/resources'
+    filter(ReplaceTokens, tokens: [project_version: project.version, project_name: project.name])
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Wrapper) {
+    gradleVersion = project.wrapper_version
+}
