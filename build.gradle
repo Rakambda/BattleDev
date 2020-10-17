@@ -1,7 +1,8 @@
 buildscript {
     ext {
-        reflections_version='0.9.12'
-        junit_version='5.7.0'
+        reflections_version = '0.9.11'
+        junit_version = '5.7.0'
+        assert4j_version = '3.17.2'
     }
 }
 
@@ -18,10 +19,13 @@ sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 ext.moduleName = project.moduleName
 
 dependencies {
-    testImplementation("org.reflections:reflections:${project.reflections_version}")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${project.junit_version}")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:${project.junit_version}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${project.junit_version}")
+    testImplementation("org.reflections:reflections:${reflections_version}")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junit_version}")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:${junit_version}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junit_version}")
+
+    testImplementation("org.assertj:assertj-core:${assert4j_version}")
 }
 
 test {

@@ -11,12 +11,10 @@ public class Ex5{
 	static class P{
 		private final int y;
 		private final int x;
-		private final int z;
 		
-		public P(int x, int y, int z){
+		public P(int x, int y){
 			this.x = x;
 			this.y = y;
-			this.z = z;
 		}
 		
 		@Override
@@ -39,31 +37,34 @@ public class Ex5{
 		ArrayList<P> values = new ArrayList<>();
 		for(String s : inputs){
 			String[] parts = s.split(" ");
-			values.add(new P(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), 0));
+			values.add(new P(Integer.parseInt(parts[0]), Integer.parseInt(parts[1])));
 		}
 		PriorityQueue<String> q = new PriorityQueue<>(2, (c1, c2) -> Integer.compare(c2.length(), c1.length()));
 		q.add("1");
 		q.add("2");
 		String next;
 		while((next = q.poll()) != null){
-			out.println("qq: " + next);
 			String q1 = next + "1";
 			String q2 = next + "2";
 			if(isValid(values, q1)){
 				if(q1.length() >= students){
 					display(q1);
-					System.exit(0);
+					for(char c : q1.toCharArray()){
+						out.println(c);
+					}
+					return;
 				}
 				q.add(q1);
-				out.println(q1);
 			}
 			if(isValid(values, q2)){
 				if(q2.length() >= students){
 					display(q2);
-					System.exit(0);
+					for(char c : q2.toCharArray()){
+						out.println(c);
+					}
+					return;
 				}
 				q.add(q2);
-				out.println(q2);
 			}
 		}
 		out.println("KO");
