@@ -2,7 +2,7 @@ buildscript {
     ext {
         reflections_version = '0.9.11'
         junit_version = '5.7.0'
-        assert4j_version = '3.18.0'
+        assert4j_version = '3.18.1'
     }
 }
 
