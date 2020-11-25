@@ -12,7 +12,7 @@ public class Base{
 	
 	public static void run(InputStream in, PrintStream out){
 		final LinkedList<String> inputs = getInputs(in);
-		out.println("");
+		out.println();
 	}
 	
 	private static LinkedList<String> getInputs(final InputStream inputStream){
