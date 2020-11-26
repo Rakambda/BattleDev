@@ -12,7 +12,21 @@ public class Ex1{
 	
 	public static void run(InputStream in, PrintStream out){
 		final LinkedList<String> inputs = getInputs(in);
-		out.println();
+		inputs.pop();
+		
+		long count = inputs.stream()
+				.filter(Ex1::isSuspect)
+				.count();
+		
+		out.println(count);
+	}
+	
+	private static boolean isSuspect(String name){
+		if(name.length() < 5){
+			return false;
+		}
+		
+		return name.substring(name.length() - 5).chars().allMatch(Character::isDigit);
 	}
 	
 	private static LinkedList<String> getInputs(final InputStream inputStream){
