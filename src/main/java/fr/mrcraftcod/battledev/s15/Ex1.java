@@ -15,7 +15,13 @@ public class Ex1{
 	public static void run(InputStream in, PrintStream out){
 		final LinkedList<String> inputs = getInputs(in);
 		inputs.pop();
-		String best = inputs.stream().collect(Collectors.groupingBy(c -> c, Collectors.counting())).entrySet().stream().sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue())).limit(2).map(Map.Entry::getKey).collect(Collectors.joining(" "));
+		String best = inputs.stream()
+				.collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+				.entrySet().stream()
+				.sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
+				.limit(2)
+				.map(Map.Entry::getKey)
+				.collect(Collectors.joining(" "));
 		out.println(best);
 	}
 	

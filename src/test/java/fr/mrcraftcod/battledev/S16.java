@@ -31,8 +31,7 @@ public class S16{
 		}
 	}
 	
-	@Disabled("Not done")
-	@Exercise(value = 2, inputCount = 4)
+	@Exercise(value = 2, inputCount = 6)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise2(ExerciseCase context) throws IOException{
@@ -75,7 +74,7 @@ public class S16{
 	}
 	
 	@Disabled("Not done")
-	@Exercise(value = 5, inputCount = 4)
+	@Exercise(value = 5, inputCount = 5)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise5(ExerciseCase context) throws IOException{
@@ -90,7 +89,7 @@ public class S16{
 	}
 	
 	@Disabled("Not done")
-	@Exercise(value = 6, inputCount = 6)
+	@Exercise(value = 6, inputCount = 12)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise6(ExerciseCase context) throws IOException{
