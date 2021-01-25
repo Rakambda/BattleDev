@@ -32,4 +32,4 @@ jobs:
       - name: Set gradle permissions
         run: chmod +x gradlew
       - name: Compile project
-        run: ./gradlew compile
+        run: ./gradlew build
