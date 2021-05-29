@@ -1,6 +1,6 @@
 [versions]
 reflections-version = "0.9.12"
-junit-version = "5.7.1"
+junit-version = "5.8.0-M1"
 assertj-version = "3.19.0"
 
 [libraries]
