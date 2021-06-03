@@ -12,7 +12,10 @@ public class Ex1{
 	
 	public static void run(InputStream in, PrintStream out){
 		final LinkedList<String> inputs = getInputs(in);
-		out.println();
+		int mass = Integer.parseInt(inputs.pop());
+		int dist = Integer.parseInt(inputs.pop());
+		
+		out.println(mass + dist * 5);
 	}
 	
 	private static LinkedList<String> getInputs(final InputStream inputStream){

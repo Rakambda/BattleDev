@@ -73,11 +73,11 @@ public class Ex4{
 				.map(Integer::parseInt)
 				.collect(Collectors.toList());
 		
-		var previous = key.get(0);
+		int previous = key.get(0);
 		OPERATIONS.put("0/0", new Operation(0, 0, previous));
 		for(int i = 1; i < keySize; i++){
 			int finalI = i;
-			var operation = Optional.ofNullable(OPERATIONS.get("0/" + (i - 1)))
+			Operation operation = Optional.ofNullable(OPERATIONS.get("0/" + (i - 1)))
 					.map(o -> new Operation(0, finalI, o.calculate(key) ^ key.get(finalI)))
 					.orElseGet(() -> new Operation(0, finalI));
 			OPERATIONS.put("0/" + i, operation);
@@ -86,8 +86,8 @@ public class Ex4{
 		List<Operation> operations = inputs.stream()
 				.map(operation -> {
 					String[] parts = operation.split(" ");
-					var min = Integer.parseInt(parts[0]);
-					var max = Integer.parseInt(parts[1]);
+					int min = Integer.parseInt(parts[0]);
+					int max = Integer.parseInt(parts[1]);
 					return OPERATIONS.computeIfAbsent(min + "/" + max,
 							k -> new Operation(Integer.parseInt(parts[0]), Integer.parseInt(parts[1])));
 				}).collect(Collectors.toList());

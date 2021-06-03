@@ -17,8 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 @Season(17)
 public class S17{
-	@Disabled("Not done")
-	@Exercise(value = 1, inputCount = 5)
+	@Exercise(value = 1, inputCount = 4)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise1(ExerciseCase context) throws IOException{
@@ -32,7 +31,6 @@ public class S17{
 		}
 	}
 	
-	@Disabled("Not done")
 	@Exercise(value = 2, inputCount = 6)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
@@ -47,8 +45,7 @@ public class S17{
 		}
 	}
 	
-	@Disabled("Not done")
-	@Exercise(value = 3, inputCount = 6)
+	@Exercise(value = 3, inputCount = 3)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise3(ExerciseCase context) throws IOException{
@@ -62,8 +59,7 @@ public class S17{
 		}
 	}
 	
-	@Disabled("Not done")
-	@Exercise(value = 4, inputCount = 4)
+	@Exercise(value = 4, inputCount = 3)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise4(ExerciseCase context) throws IOException{
@@ -78,7 +74,7 @@ public class S17{
 	}
 	
 	@Disabled("Not done")
-	@Exercise(value = 5, inputCount = 5)
+	@Exercise(value = 5, inputCount = 3)
 	@ParameterizedTest
 	@ArgumentsSource(ExerciseInputsProvider.class)
 	void exercise5(ExerciseCase context) throws IOException{
