@@ -4,6 +4,7 @@ import fr.mrcraftcod.battledev.s15.*;
 import fr.mrcraftcod.battledev.utils.Exercise;
 import fr.mrcraftcod.battledev.utils.ExerciseCase;
 import fr.mrcraftcod.battledev.utils.ExerciseInputsProvider;
+import fr.mrcraftcod.battledev.utils.ParallelizableTest;
 import fr.mrcraftcod.battledev.utils.Season;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 @Season(15)
+@ParallelizableTest
 public class S15{
 	@Exercise(value = 1, inputCount = 3)
 	@ParameterizedTest

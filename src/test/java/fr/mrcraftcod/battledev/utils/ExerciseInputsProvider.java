@@ -4,7 +4,7 @@ import fr.mrcraftcod.battledev.utils.file.ExerciseFile;
 import fr.mrcraftcod.battledev.utils.file.InputExerciseFile;
 import fr.mrcraftcod.battledev.utils.file.OutputExerciseFile;
 import org.reflections.Reflections;
-import org.reflections.scanners.ResourcesScanner;
+import org.reflections.scanners.Scanners;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
@@ -60,7 +60,7 @@ public class ExerciseInputsProvider implements ArgumentsProvider{
 		final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		
 		final InputExerciseFile input = loadInput(
-				new Reflections(String.format("s%s.ex%s", season, exercise), new ResourcesScanner())
+				new Reflections(String.format("s%s.ex%s", season, exercise), Scanners.Resources)
 						.getResources(Pattern.compile("input" + caze + "\\.txt"))
 						.stream().map(classLoader::getResource)
 						.filter(Objects::nonNull)
@@ -69,7 +69,7 @@ public class ExerciseInputsProvider implements ArgumentsProvider{
 				InputExerciseFile::new
 		);
 		final OutputExerciseFile output = loadInput(
-				new Reflections(String.format("s%s.ex%s", season, exercise), new ResourcesScanner())
+				new Reflections(String.format("s%s.ex%s", season, exercise), Scanners.Resources)
 						.getResources(Pattern.compile("output" + caze + "\\.txt"))
 						.stream().map(classLoader::getResource)
 						.filter(Objects::nonNull)
