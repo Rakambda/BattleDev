@@ -4,6 +4,7 @@ import fr.mrcraftcod.battledev.s14.*;
 import fr.mrcraftcod.battledev.utils.Exercise;
 import fr.mrcraftcod.battledev.utils.ExerciseCase;
 import fr.mrcraftcod.battledev.utils.ExerciseInputsProvider;
+import fr.mrcraftcod.battledev.utils.ParallelizableTest;
 import fr.mrcraftcod.battledev.utils.Season;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,6 +15,7 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Season(14)
+@ParallelizableTest
 public class S14{
 	@Exercise(value = 1, inputCount = 2)
 	@ParameterizedTest
