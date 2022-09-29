@@ -1,5 +1,5 @@
 [versions]
-reflections-version = "0.9.12"
+reflections-version = "0.10.2"
 junit-version = "5.9.1"
 assertj-version = "3.23.1"
 
