@@ -1,7 +1,8 @@
 plugins {
     idea
     java
-    id("com.github.ben-manes.versions") version ("0.39.0")
+    alias(libs.plugins.names)
+    alias(libs.plugins.testLogger)
 }
 
 group = "fr.raksrinana"
