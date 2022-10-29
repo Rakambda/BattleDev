@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.testLogger)
 }
 
-group = "fr.raksrinana"
+group = "fr.rakambda"
 description = "BattleDev"
 
 dependencies {
