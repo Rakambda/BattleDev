@@ -3,7 +3,7 @@ reflections-version = "0.10.2"
 junit-version = "5.9.1"
 assertj-version = "3.23.1"
 
-names-version = "0.43.0"
+names-version = "0.44.0"
 test-logger-version = "3.2.0"
 
 [libraries]
