@@ -1,26 +1,11 @@
-name: CI
+name: Build
 
-on: [ push ]
-
-env:
-  APP_JAVA_VERSION: 16
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: ${{ env.APP_JAVA_VERSION }}
-
-      - name: Build
-        uses: gradle/gradle-build-action@v2.7.0
-        with:
-          cache-disabled: true
-          arguments: |
-            build
+    uses: Rakambda/rakambda-github-workflows/.github/workflows/gradle-build.yml@main
+    with:
+      java-version: ${{ vars.JAVA_VERSION }}
