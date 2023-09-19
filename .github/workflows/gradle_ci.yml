@@ -4,8 +4,11 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
-    uses: Rakambda/rakambda-github-workflows/.github/workflows/gradle-build.yml@main
+    uses: RakambdaOrg/rakambda-github-workflows/.github/workflows/gradle-build.yml@main
     with:
       java-version: ${{ vars.JAVA_VERSION }}
