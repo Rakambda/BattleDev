@@ -1,7 +1,7 @@
 [versions]
 reflections-version = "0.10.2"
 junit-version = "5.10.1"
-assertj-version = "3.25.1"
+assertj-version = "3.25.2"
 
 names-version = "0.51.0"
 test-logger-version = "4.0.0"
